@@ -17,7 +17,7 @@ class _LandingPage extends State<LandingPage> {
     Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset("assets/landingpage/first_landing.jpg"),
+        Image.asset("assets/landingpage/page_1.jpg"),
         SizedBox(height: 20),
         Text(
           "View product 360 degrees",
@@ -39,7 +39,7 @@ class _LandingPage extends State<LandingPage> {
     Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset("assets/landingpage/first_landing.jpg"),
+        Image.asset("assets/landingpage/page_2.jpg"),
         SizedBox(height: 20),
         Text(
           "Find products easily",
@@ -61,7 +61,7 @@ class _LandingPage extends State<LandingPage> {
     Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset("assets/landingpage/first_landing.jpg"),
+        Image.asset("assets/landingpage/page_3.jpg"),
         SizedBox(height: 20),
         Text(
           "Payment is easy",
@@ -144,10 +144,19 @@ class _LandingPage extends State<LandingPage> {
       SizedBox(height: 20),
       ElevatedButton(
         onPressed: () {},
-        child: Text(
-          "Get Started!",
-          style: TextStyle(color: Colors.white),
+        child: SizedBox(
+          width: 250,
+          child: Text(
+            "Get Started!",
+            style: TextStyle(
+                color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.bold
+            ),
+            textAlign: TextAlign.center,
+          ),
         ),
+
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.brown,
           shape: RoundedRectangleBorder(
