@@ -35,169 +35,169 @@ class _Signuppage extends State<Signuppage>{
         ),
       ),
       body: Padding(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children:[
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children:[
             Text(
-              "Email Address",
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey
-              ),
+            "Email Address",
+            style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey
             ),
-            SizedBox(height: 10),
-            TextField(
-              decoration: InputDecoration(
+          ),
+          SizedBox(height: 10),
+          TextField(
+            decoration: InputDecoration(
                 hintText: "Enter your email",
                 hintStyle: TextStyle(
-                  color: Colors.grey
+                    color: Colors.grey
                 ),
                 border: OutlineInputBorder()
-              ),
             ),
-            SizedBox(height: 10),
-            Text(
-              "We'll send your order confirmation here",
-              style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.grey
-              ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            "We'll send your order confirmation here",
+            style: TextStyle(
+                fontSize: 12,
+                color: Colors.grey
             ),
+          ),
 
-            SizedBox(height: 20),
+          SizedBox(height: 20),
 
-            Text(
-              "First name",
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey
-              ),
+          Text(
+            "First name",
+            style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey
             ),
-            SizedBox(height: 10),
-            TextField(
-              decoration: InputDecoration(
-                  hintText: "Enter first name",
-                  hintStyle: TextStyle(
-                      color: Colors.grey
-                  ),
-                  border: OutlineInputBorder()
-              ),
+          ),
+          SizedBox(height: 10),
+          TextField(
+            decoration: InputDecoration(
+                hintText: "Enter first name",
+                hintStyle: TextStyle(
+                    color: Colors.grey
+                ),
+                border: OutlineInputBorder()
             ),
-            SizedBox(height: 15),
-
-
-
-            Text(
-              "Last name",
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey
-              ),
-            ),
-            SizedBox(height: 10),
-            TextField(
-              decoration: InputDecoration(
-                  hintText: "Enter last name",
-                  hintStyle: TextStyle(
-                      color: Colors.grey
-                  ),
-                  border: OutlineInputBorder()
-              ),
-            ),
-            SizedBox(height: 15),
+          ),
+          SizedBox(height: 15),
 
 
 
-            Text(
-              "Password",
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey
-              ),
+          Text(
+            "Last name",
+            style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey
             ),
-            SizedBox(height: 10),
-            TextField(
-              decoration: InputDecoration(
-                  hintText: "Enter password",
-                  hintStyle: TextStyle(
-                      color: Colors.grey
-                  ),
-                  border: OutlineInputBorder()
-              ),
+          ),
+          SizedBox(height: 10),
+          TextField(
+            decoration: InputDecoration(
+                hintText: "Enter last name",
+                hintStyle: TextStyle(
+                    color: Colors.grey
+                ),
+                border: OutlineInputBorder()
             ),
-            SizedBox(height: 10),
-            Text(
-              "Must be 10 or more characters",
-              style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.grey
-              ),
-            ),
-            SizedBox(height: 20,),
+          ),
+          SizedBox(height: 15),
 
-            Text(
-              "Date of Birth",
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey
-              ),
+
+
+          Text(
+            "Password",
+            style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey
             ),
-            SizedBox(height: 10),
-            Row(
+          ),
+          SizedBox(height: 10),
+          TextField(
+            decoration: InputDecoration(
+                hintText: "Enter password",
+                hintStyle: TextStyle(
+                    color: Colors.grey
+                ),
+                border: OutlineInputBorder()
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            "Must be 10 or more characters",
+            style: TextStyle(
+                fontSize: 12,
+                color: Colors.grey
+            ),
+          ),
+          SizedBox(height: 20,),
+
+          Text(
+            "Date of Birth",
+            style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey
+            ),
+          ),
+          SizedBox(height: 10),
+          Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  flex: 1,
-                    child: DropdownButtonFormField<int>(
-                      icon: Icon(
-                          Icons.keyboard_arrow_down,
-                        color: Colors.brown,
+              Expanded(
+              flex: 1,
+              child: DropdownButtonFormField<int>(
+                  icon: Icon(
+                    Icons.keyboard_arrow_down,
+                    color: Colors.brown,
+                  ),
+                  isExpanded: true,
+                  hint: Center(
+                    child: Text("DD",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey, // Customize hint text color
                       ),
-                      isExpanded: true,
-                      hint: Center(
-                        child: Text("DD",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey, // Customize hint text color
-                          ),
-                        ),
-                        ),
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey.shade800),
-                          ),
-                        ),
-                        items: days.map((day){
-                          return DropdownMenuItem(child: Center(
-                              child: Center(
-                                child: Padding(
-                                  child: Text(
-                                    day.toString(),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                    padding: EdgeInsets.only(right: 2)
-                                )
-                              )
-                          ),
-                            value: day,
-                          );
-                        }).toList(), onChanged: (value){
-                      setState(() {
-                        selected_date = value;
-                      });
-                    }
-                    )),
-                SizedBox(width: 15),
+                    ),
+                  ),
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade800),
+                    ),
+                  ),
+                  items: days.map((day){
+                    return DropdownMenuItem(child: Center(
+                        child: Center(
+                            child: Padding(
+                                child: Text(
+                                  day.toString(),
+                                  textAlign: TextAlign.center,
+                                ),
+                                padding: EdgeInsets.only(right: 2)
+                            )
+                        )
+                    ),
+                      value: day,
+                    );
+                  }).toList(), onChanged: (value){
+                setState(() {
+                  selected_date = value;
+                });
+              }
+              )),
+          SizedBox(width: 15),
           DropdownButtonFormField<int>(
               icon: Icon(
                 Icons.keyboard_arrow_down,
@@ -240,121 +240,94 @@ class _Signuppage extends State<Signuppage>{
               selected_date = value;
             });
           }
+          ),
+      SizedBox(width: 15),
+
+      Expanded(
+          flex: 1,
+          child: DropdownButtonFormField<String>(
+              isExpanded: true,
+              hint: Center(
+                child: Text("MM",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey, // Customize hint text color
+                  ),
+                ),
+              ),
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade800),
+                ),
+              ),
+              items: months.map((month){
+                return DropdownMenuItem(child: Center(
+                    child: Center(
+                      child: Text(
+                        month,
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                ),
+                  value: month,
+                );
+              }).toList(), onChanged: (value){
+            setState(() {
+              selected_month = value;
+            });
+          }
           )),
-                SizedBox(width: 15),
-
-                Expanded(
-                    flex: 1,
-                    child: DropdownButtonFormField<String>(
-                      isExpanded: true,
-                        hint: Center(
-                            child: Text("MM",
+      SizedBox(width: 15),
+      Expanded(
+          flex: 1,
+          child: DropdownButtonFormField<int>(
+              isExpanded: true,
+              hint: Center(
+                child: Text("YYYY",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey, // Customize hint text color
+                  ),
+                ),
+              ),
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade800),
+                ),
+              ),
+              items: days.map((day){
+                return DropdownMenuItem(child: Center(
+                    child: Center(
+                        child: Padding(
+                            child: Text(
+                              day.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.grey, // Customize hint text color
-                              ),
                             ),
-                        ),
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey.shade800),
-                          ),
-                        ),
-                        items: months.map((month){
-                          return DropdownMenuItem(child: Center(
-                              child: Center(
-                                  child: Text(
-                                    month,
-                                    textAlign: TextAlign.center,
-                                  ),
-                              )
-                          ),
-                            value: month,
-                          );
-                        }).toList(), onChanged: (value){
-                      setState(() {
-                        selected_month = value;
-                      });
-                    }
-                    )),
-                SizedBox(width: 15),
-                Expanded(
-                  flex: 1,
-                    child: DropdownButtonFormField<int>(
-                      isExpanded: true,
-                        hint: Center(
-                            child: Text("YYYY",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.grey, // Customize hint text color
-                              ),
-                            ),
-                        ),
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey.shade800),
-                          ),
-                        ),
-                        items: days.map((day){
-                          return DropdownMenuItem(child: Center(
-                              child: Center(
-                                  child: Padding(
-                                      child: Text(
-                                        day.toString(),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                      padding: EdgeInsets.only(right: 2)
-                                  )
-                              )
-                          ),
-                            value: day,
-                          );
-                        }).toList(), onChanged: (value){
-                      setState(() {
-                        selected_date = value;
-                      });
-                    }
-                    )),
-              ],
-            ),
-            // ElevatedButton(onPressed: (){}, child: DropdownButton<int>(
-            //
-            //     hint: Text("DD"),
-            //     value: selected_date,
-            //     underline: SizedBox(),
-            //     isExpanded: true,
-            //     dropdownColor: Colors.white,
-            //     items: days.map((day){
-            //       return DropdownMenuItem(
-            //         child: Center(
-            //           child: Text(
-            //             day.toString(),
-            //             textAlign: TextAlign.center,
-            //           ),
-            //         ),
-            //         value: day,
-            //       );
-            //     }).toList(),
-            //
-            //     onChanged: (value){
-            //       setState(() {
-            //         selected_date = value;
-            //       });
-            //     }
-            // )),
-
-            SizedBox(height: 20),
-          ],
-        ),
-          padding: EdgeInsets.symmetric(vertical: 0,horizontal: 16))
+                            padding: EdgeInsets.only(right: 2)
+                        )
+                    )
+                ),
+                  value: day,
+                );
+              }).toList(), onChanged: (value){
+            setState(() {
+              selected_date = value;
+            });
+          }
+          )),
+      ],),
+        ]),
+        padding: EdgeInsets.symmetric(vertical:0 ,horizontal: 16),
+    ),
     );
+
   }
 }
