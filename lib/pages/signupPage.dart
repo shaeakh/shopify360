@@ -149,29 +149,25 @@ class _Signuppage extends State<Signuppage>{
               ),
             ),
             SizedBox(height: 10),
-            TextField(
-              decoration: InputDecoration(
-                  hintText: "Enter password",
-                  hintStyle: TextStyle(
-                      color: Colors.grey
-                  ),
-                  border: OutlineInputBorder()
-              ),
-            ),
-            SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IntrinsicWidth(
+                Expanded(
+                  flex: 1,
                     child: DropdownButtonFormField<int>(
+                      icon: Icon(
+                          Icons.keyboard_arrow_down,
+                        color: Colors.brown,
+                      ),
+                      isExpanded: true,
                       hint: Center(
                         child: Text("DD",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.grey, // Customize hint text color
-                                ),
-                              ),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.grey, // Customize hint text color
+                          ),
+                        ),
                         ),
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -184,10 +180,13 @@ class _Signuppage extends State<Signuppage>{
                         items: days.map((day){
                           return DropdownMenuItem(child: Center(
                               child: Center(
-                                child: Text(
-                                  day.toString(),
-                                  textAlign: TextAlign.center,
-                                ),
+                                child: Padding(
+                                  child: Text(
+                                    day.toString(),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                    padding: EdgeInsets.only(right: 2)
+                                )
                               )
                           ),
                             value: day,
@@ -198,7 +197,132 @@ class _Signuppage extends State<Signuppage>{
                       });
                     }
                     )),
+                SizedBox(width: 15),
+          DropdownButtonFormField<int>(
+              icon: Icon(
+                Icons.keyboard_arrow_down,
+                color: Colors.brown,
+              ),
+              isExpanded: false,
+              hint: Center(
+                child: Text("DD",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey, // Customize hint text color
+                  ),
+                ),
+              ),
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade800),
+                ),
+              ),
+              items: days.map((day){
+                return DropdownMenuItem(child: Center(
+                    child: Center(
+                        child: Padding(
+                            child: Text(
+                              day.toString(),
+                              textAlign: TextAlign.center,
+                            ),
+                            padding: EdgeInsets.only(right: 2)
+                        )
+                    )
+                ),
+                  value: day,
+                );
+              }).toList(), onChanged: (value){
+            setState(() {
+              selected_date = value;
+            });
+          }
+          )),
+                SizedBox(width: 15),
 
+                Expanded(
+                    flex: 1,
+                    child: DropdownButtonFormField<String>(
+                      isExpanded: true,
+                        hint: Center(
+                            child: Text("MM",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.grey, // Customize hint text color
+                              ),
+                            ),
+                        ),
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade800),
+                          ),
+                        ),
+                        items: months.map((month){
+                          return DropdownMenuItem(child: Center(
+                              child: Center(
+                                  child: Text(
+                                    month,
+                                    textAlign: TextAlign.center,
+                                  ),
+                              )
+                          ),
+                            value: month,
+                          );
+                        }).toList(), onChanged: (value){
+                      setState(() {
+                        selected_month = value;
+                      });
+                    }
+                    )),
+                SizedBox(width: 15),
+                Expanded(
+                  flex: 1,
+                    child: DropdownButtonFormField<int>(
+                      isExpanded: true,
+                        hint: Center(
+                            child: Text("YYYY",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.grey, // Customize hint text color
+                              ),
+                            ),
+                        ),
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade800),
+                          ),
+                        ),
+                        items: days.map((day){
+                          return DropdownMenuItem(child: Center(
+                              child: Center(
+                                  child: Padding(
+                                      child: Text(
+                                        day.toString(),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      padding: EdgeInsets.only(right: 2)
+                                  )
+                              )
+                          ),
+                            value: day,
+                          );
+                        }).toList(), onChanged: (value){
+                      setState(() {
+                        selected_date = value;
+                      });
+                    }
+                    )),
               ],
             ),
             // ElevatedButton(onPressed: (){}, child: DropdownButton<int>(
@@ -228,9 +352,6 @@ class _Signuppage extends State<Signuppage>{
             // )),
 
             SizedBox(height: 20),
-
-
-
           ],
         ),
           padding: EdgeInsets.symmetric(vertical: 0,horizontal: 16))
