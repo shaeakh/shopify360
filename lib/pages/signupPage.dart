@@ -152,182 +152,181 @@ class _Signuppage extends State<Signuppage>{
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-              Expanded(
-              flex: 1,
-              child: DropdownButtonFormField<int>(
-                  icon: Icon(
-                    Icons.keyboard_arrow_down,
-                    color: Colors.brown,
-                  ),
-                  isExpanded: true,
-                  hint: Center(
-                    child: Text("DD",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey, // Customize hint text color
+                Expanded(
+                flex: 1,
+                child: DropdownButtonFormField<int>(
+                    icon: Icon(
+                      Icons.keyboard_arrow_down,
+                      color: Colors.brown,
+                    ),
+                    isExpanded: true,
+                    hint: Center(
+                      child: Text("DD",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey, // Customize hint text color
+                        ),
                       ),
                     ),
-                  ),
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade800),
+                      ),
                     ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade800),
+                    items: days.map((day){
+                      return DropdownMenuItem(child: Center(
+                          child: Center(
+                              child: Padding(
+                                  child: Text(
+                                    day.toString(),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  padding: EdgeInsets.only(right: 2)
+                              )
+                          )
+                      ),
+                        value: day,
+                      );
+                    }).toList(), onChanged: (value){
+                  setState(() {
+                    selected_date = value;
+                  });
+                }
+                )),
+                SizedBox(width: 15),
+                DropdownButtonFormField<int>(
+                    icon: Icon(
+                      Icons.keyboard_arrow_down,
+                      color: Colors.brown,
                     ),
-                  ),
-                  items: days.map((day){
-                    return DropdownMenuItem(child: Center(
-                        child: Center(
-                            child: Padding(
+                    isExpanded: false,
+                    hint: Center(
+                      child: Text("DD",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey, // Customize hint text color
+                        ),
+                      ),
+                    ),
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade800),
+                      ),
+                    ),
+                    items: days.map((day){
+                      return DropdownMenuItem(child: Center(
+                          child: Center(
+                              child: Padding(
+                                  child: Text(
+                                    day.toString(),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  padding: EdgeInsets.only(right: 2)
+                              )
+                          )
+                      ),
+                        value: day,
+                      );
+                    }).toList(), onChanged: (value){
+                  setState(() {
+                    selected_date = value;
+                  });
+                }
+                ),
+                SizedBox(width: 15),
+                Expanded(
+                    flex: 1,
+                    child: DropdownButtonFormField<String>(
+                        isExpanded: true,
+                        hint: Center(
+                          child: Text("MM",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.grey, // Customize hint text color
+                            ),
+                          ),
+                        ),
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade800),
+                          ),
+                        ),
+                        items: months.map((month){
+                          return DropdownMenuItem(child: Center(
+                              child: Center(
                                 child: Text(
-                                  day.toString(),
+                                  month,
                                   textAlign: TextAlign.center,
                                 ),
-                                padding: EdgeInsets.only(right: 2)
-                            )
-                        )
-                    ),
-                      value: day,
-                    );
-                  }).toList(), onChanged: (value){
-                setState(() {
-                  selected_date = value;
-                });
-              }
-              )),
-          SizedBox(width: 15),
-          DropdownButtonFormField<int>(
-              icon: Icon(
-                Icons.keyboard_arrow_down,
-                color: Colors.brown,
-              ),
-              isExpanded: false,
-              hint: Center(
-                child: Text("DD",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey, // Customize hint text color
-                  ),
-                ),
-              ),
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey.shade800),
-                ),
-              ),
-              items: days.map((day){
-                return DropdownMenuItem(child: Center(
-                    child: Center(
-                        child: Padding(
-                            child: Text(
-                              day.toString(),
-                              textAlign: TextAlign.center,
+                              )
+                          ),
+                            value: month,
+                          );
+                        }).toList(), onChanged: (value){
+                      setState(() {
+                        selected_month = value;
+                      });
+                    }
+                    )),
+                SizedBox(width: 15),
+                Expanded(
+                    flex: 1,
+                    child: DropdownButtonFormField<int>(
+                        isExpanded: true,
+                        hint: Center(
+                          child: Text("YYYY",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.grey, // Customize hint text color
                             ),
-                            padding: EdgeInsets.only(right: 2)
-                        )
-                    )
-                ),
-                  value: day,
-                );
-              }).toList(), onChanged: (value){
-            setState(() {
-              selected_date = value;
-            });
-          }
+                          ),
+                        ),
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade800),
+                          ),
+                        ),
+                        items: days.map((day){
+                          return DropdownMenuItem(child: Center(
+                              child: Center(
+                                  child: Padding(
+                                      child: Text(
+                                        day.toString(),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      padding: EdgeInsets.only(right: 2)
+                                  )
+                              )
+                          ),
+                            value: day,
+                          );
+                        }).toList(), onChanged: (value){
+                      setState(() {
+                        selected_date = value;
+                      });
+                    }
+                    )),
+              ],
           ),
-      SizedBox(width: 15),
-
-      Expanded(
-          flex: 1,
-          child: DropdownButtonFormField<String>(
-              isExpanded: true,
-              hint: Center(
-                child: Text("MM",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey, // Customize hint text color
-                  ),
-                ),
-              ),
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey.shade800),
-                ),
-              ),
-              items: months.map((month){
-                return DropdownMenuItem(child: Center(
-                    child: Center(
-                      child: Text(
-                        month,
-                        textAlign: TextAlign.center,
-                      ),
-                    )
-                ),
-                  value: month,
-                );
-              }).toList(), onChanged: (value){
-            setState(() {
-              selected_month = value;
-            });
-          }
-          )),
-      SizedBox(width: 15),
-      Expanded(
-          flex: 1,
-          child: DropdownButtonFormField<int>(
-              isExpanded: true,
-              hint: Center(
-                child: Text("YYYY",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey, // Customize hint text color
-                  ),
-                ),
-              ),
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey.shade800),
-                ),
-              ),
-              items: days.map((day){
-                return DropdownMenuItem(child: Center(
-                    child: Center(
-                        child: Padding(
-                            child: Text(
-                              day.toString(),
-                              textAlign: TextAlign.center,
-                            ),
-                            padding: EdgeInsets.only(right: 2)
-                        )
-                    )
-                ),
-                  value: day,
-                );
-              }).toList(), onChanged: (value){
-            setState(() {
-              selected_date = value;
-            });
-          }
-          )),
-      ],),
         ]),
         padding: EdgeInsets.symmetric(vertical:0 ,horizontal: 16),
-    ),
+      ),
     );
-
   }
 }
