@@ -18,6 +18,15 @@ class _timelinepage extends State<timelinepage>{
               fontWeight: FontWeight.bold
           ),
         ),
+          Icons.chevron_left,
+          color: Colors.grey,
+          size: 40,
+        ),
+        actions: [
+          IconButton(
+              onPressed: (){}, icon: Icon(Icons.shopping_cart,color: Colors.grey,)
+          )
+        ],
       ),
     );
   }
