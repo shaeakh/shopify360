@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopify360/pages/signupPage.dart';
+import 'package:shopify360/pages/timelinePage.dart';
 
 import 'pages/landingPage.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const Signuppage(),
+      home: const timelinepage(),
     );
   }
 }
