@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shopify360/pages/signupPage.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -119,6 +120,15 @@ class _LandingPage extends State<LandingPage> {
     );
   }
 
+  void handle_started(){
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) =>Signuppage(),
+        )
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -143,7 +153,7 @@ class _LandingPage extends State<LandingPage> {
       _buildPageIndicator(),
       SizedBox(height: 20),
       ElevatedButton(
-        onPressed: () {},
+        onPressed: handle_started,
         child: SizedBox(
           width: 250,
           child: Text(
