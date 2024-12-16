@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Product {
-  final int id;
+  final String id;
   final String productName;
   final double price;
   final bool favourite;
@@ -15,14 +15,14 @@ class Product {
     required this.pictureUrl,
   });
 
-
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      id: int.parse(json['id'].toString()),
-      productName: json['name'] ?? '',
+      id: json['id'] ?? '',
+      productName: json['product_name'] ?? '',
       price: double.parse(json['price'].toString()),
       favourite: json['favourite'] ?? false,
-      pictureUrl: json['image'] ?? 'https://www.transparentpng.com/thumb/t-shirt/JcvzGC-orange-t-shirt-image.png',
+      pictureUrl: json['image'] ??
+          'https://dummyimage.com/200x200/cccccc/ffffff.png&text=No+Image',
     );
   }
 }
@@ -30,8 +30,8 @@ class Product {
 class ProductCard1 extends StatelessWidget {
   final Product product;
 
-  const ProductCard1({Key? key, required this.product}) : super(key: key);
-
+  ProductCard1({Key? key, required this.product}) : super(key: key);  
+  
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -40,13 +40,14 @@ class ProductCard1 extends StatelessWidget {
       children: [
         // The card behind
         Card(
-          elevation: 3,
+          elevation: 8,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
           child: Padding(
             // top padding to leave space for image overlap
-            padding: const EdgeInsets.only(top: 60, left: 8, right: 8, bottom: 8),
+            padding:
+                const EdgeInsets.only(top: 60, left: 8, right: 8, bottom: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -59,7 +60,7 @@ class ProductCard1 extends StatelessWidget {
                       product.productName,
                       style: TextStyle(
                         fontSize: 14,
-                        color: Colors.grey.shade600,
+                        color: Colors.grey,
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -86,6 +87,7 @@ class ProductCard1 extends StatelessWidget {
         // Overlapping product image
         Positioned(
           top: -20,
+          right: 35,
           child: Image.network(
             product.pictureUrl,
             height: 80,

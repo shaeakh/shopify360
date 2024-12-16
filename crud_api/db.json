@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "product_name": "Handbag LV",
+      "price": 225,
+      "favourite": true,
+      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/bag.png"
+    },
+    {
+      "id": 2,
+      "product_name": "Shoes",
+      "price": 201,
+      "favourite": false,
+      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/shoe.png"
+    },
+    {
+      "id": 3,
+      "product_name": "T-shirt",
+      "price": 400,
+      "favourite": false,
+      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/t-shirt.png"
+    },
+    {
+      "id": 4,
+      "product_name": "Shorts",
+      "price": 100,
+      "favourite": true,
+      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/shorts.png"
+    },
+    {
+      "id": 5,
+      "product_name": "Jeans",
+      "price": 200,
+      "favourite": false,
+      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/jeans.png"
+    },
+    {
+      "id": 6,
+      "product_name": "Sneakers",
+      "price": 300,
+      "favourite": true,
+      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/sneakers.png"
+    },
+    {
+      "id": 7,
+      "product_name": "Pants",
+      "price": 500,
+      "favourite": false,
+      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/pants.png"
+    }
+  ]
+}

@@ -1,29 +1,37 @@
 import 'dart:convert';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:shopify360/widgets/timeline/card1.dart';
-class Home extends StatefulWidget{
+
+class Home extends StatefulWidget {
   const Home({super.key});
   @override
   State<Home> createState() => _Home();
 }
 
-class _Home extends State<Home>{
+class _Home extends State<Home> {
   static const Map<String, dynamic> dammyProduct = {
-    "id": 1,
+    "id": '1',
     "product_name": "Handbag LV",
     "price": 225,
     "favourite": true,
-    "picture_url": "https://www.transparentpng.com/thumb/t-shirt/JcvzGC-orange-t-shirt-image.png"
+    "picture_url":
+        "https://www.transparentpng.com/thumb/t-shirt/JcvzGC-orange-t-shirt-image.png"
   };
   final product = Product.fromJson(dammyProduct);
 
   final baseUrl = dotenv.env['backend_URL'];
   List<Product>? Products;
+  String? error;
   var data;
   void fetchdata() async {
+    setState(() {
+      error = null;
+      Products = null;
+    });
+
     final url = Uri.parse('${baseUrl}/products');
     try {
       final response = await http.get(url);
@@ -34,13 +42,16 @@ class _Home extends State<Home>{
           Products = productList.map((item) => Product.fromJson(item)).toList();
         });
       } else {
-        print('Error: ${response.statusCode}');
+        setState(() {
+          error = 'Failed to load products: ${response.statusCode}';
+        });
       }
     } catch (e) {
-      print('Exception: $e');
+      setState(() {
+        error = 'Error connecting to server: $e';
+      });
     }
   }
-
 
   @override
   void initState() {
@@ -69,7 +80,37 @@ class _Home extends State<Home>{
               ],
             ),
             const SizedBox(height: 16),
-            ProductCard1(product: product),
+            if (error != null)
+              Center(
+                child: Column(
+                  children: [
+                    Text(error!, style: const TextStyle(color: Colors.red)),
+                    ElevatedButton(
+                      onPressed: fetchdata,
+                      child: const Text('Retry'),
+                    ),
+                  ],
+                ),
+              )
+            else if (Products == null)
+              const Center(
+                child: CircularProgressIndicator(
+                  color: Colors.brown,
+                ),
+              )
+            else
+              GridView.count(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 0),
+                crossAxisCount: 2,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,                
+                children: Products!.map((product) {
+                  return ProductCard1(product: product);
+                }).toList(),
+              ),
+
             // Products == null
             //     ? const Center(child: CircularProgressIndicator())
             //     : GridView.count(
@@ -89,7 +130,7 @@ class _Home extends State<Home>{
     );
   }
 
-  Widget _buildActionButton(String text, IconData icon,VoidCallback onpress) {
+  Widget _buildActionButton(String text, IconData icon, VoidCallback onpress) {
     return OutlinedButton.icon(
       onPressed: onpress,
       icon: Icon(icon, color: Colors.brown),
