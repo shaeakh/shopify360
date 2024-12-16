@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shopify360/pages/signupPage.dart';
 import 'package:shopify360/pages/timelinePage.dart';
 
 import 'pages/landingPage.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load();
   runApp(const MyApp());
 }
 
