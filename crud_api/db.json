@@ -49,5 +49,27 @@
       "favourite": false,
       "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/pants.png"
     }
+  ],
+  "suggestions":[
+    {
+      "type" : "Shoe",
+      "product_name" : "Shoes 1"
+    },
+    {
+      "type" : "Shoe",
+      "product_name" : "Shoes 2"
+    },
+    {
+      "type" : "Jeans",
+      "product_name" : "Jeans 1"
+    },
+    {
+      "type" : "Jeans",
+      "product_name" : "Jeans 2"
+    },
+    {
+      "type" : "Bag",
+      "product_name" : "Bag 1"
+    }
   ]
 }

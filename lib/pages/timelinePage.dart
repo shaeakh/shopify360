@@ -24,26 +24,6 @@ class _timelinepage extends State<timelinepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          "New Trend",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        leading: Icon(
-          Icons.chevron_left,
-          color: Colors.grey,
-          size: 40,
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.shopping_cart,
-                color: Colors.grey,
-              )),
-        ],
-      ),
       body: _pages[selected_index],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,

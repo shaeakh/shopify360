@@ -61,70 +61,92 @@ class _Home extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: _buildActionButton("Sort", Icons.sort, fetchdata),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: _buildActionButton("Filter", Icons.tune, fetchdata),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            if (error != null)
-              Center(
-                child: Column(
-                  children: [
-                    Text(error!, style: const TextStyle(color: Colors.red)),
-                    ElevatedButton(
-                      onPressed: fetchdata,
-                      child: const Text('Retry'),
-                    ),
-                  ],
-                ),
-              )
-            else if (Products == null)
-              const Center(
-                child: CircularProgressIndicator(
-                  color: Colors.brown,
-                ),
-              )
-            else
-              GridView.count(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                crossAxisCount: 2,
-                crossAxisSpacing:0,
-                mainAxisSpacing:0,                
-                children: Products!.map((product) {
-                  return ProductCard1(product: product);
-                }).toList(),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "New Trend",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        leading: Icon(
+          Icons.chevron_left,
+          color: Colors.grey,
+          size: 40,
+        ),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.shopping_cart,
+                color: Colors.grey,
+              )),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: _buildActionButton("Sort", Icons.sort, fetchdata),
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: _buildActionButton("Filter", Icons.tune, fetchdata),
+                  ),
+                ],
               ),
+              const SizedBox(height: 16),
+              if (error != null)
+                Center(
+                  child: Column(
+                    children: [
+                      Text(error!, style: const TextStyle(color: Colors.red)),
+                      ElevatedButton(
+                        onPressed: fetchdata,
+                        child: const Text('Retry'),
+                      ),
+                    ],
+                  ),
+                )
+              else if (Products == null)
+                const Center(
+                  child: CircularProgressIndicator(
+                    color: Colors.brown,
+                  ),
+                )
+              else
+                GridView.count(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  crossAxisCount: 2,
+                  crossAxisSpacing:0,
+                  mainAxisSpacing:0,
+                  children: Products!.map((product) {
+                    return ProductCard1(product: product);
+                  }).toList(),
+                ),
 
-            // Products == null
-            //     ? const Center(child: CircularProgressIndicator())
-            //     : GridView.count(
-            //   shrinkWrap: true,
-            //   physics: const NeverScrollableScrollPhysics(),
-            //   padding: const EdgeInsets.all(16),
-            //   crossAxisCount: 2,
-            //   crossAxisSpacing: 16,
-            //   mainAxisSpacing: 16,
-            //   children: Products!.map((product) {
-            //     return ProductCard1(product: product);
-            //   }).toList(),
-            // ),
-          ],
+              // Products == null
+              //     ? const Center(child: CircularProgressIndicator())
+              //     : GridView.count(
+              //   shrinkWrap: true,
+              //   physics: const NeverScrollableScrollPhysics(),
+              //   padding: const EdgeInsets.all(16),
+              //   crossAxisCount: 2,
+              //   crossAxisSpacing: 16,
+              //   mainAxisSpacing: 16,
+              //   children: Products!.map((product) {
+              //     return ProductCard1(product: product);
+              //   }).toList(),
+              // ),
+            ],
+          ),
         ),
       ),
     );
