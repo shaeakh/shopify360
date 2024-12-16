@@ -102,10 +102,10 @@ class _Home extends State<Home> {
               GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 0),
+                padding: const EdgeInsets.symmetric(vertical: 20),
                 crossAxisCount: 2,
-                crossAxisSpacing: 8,
-                mainAxisSpacing: 8,                
+                crossAxisSpacing:0,
+                mainAxisSpacing:0,                
                 children: Products!.map((product) {
                   return ProductCard1(product: product);
                 }).toList(),
