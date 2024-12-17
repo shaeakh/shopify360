@@ -1,16 +1,36 @@
-# shopify360
+# Shopify360 🛍️
 
-A new Flutter project.
+A modern Flutter-based e-commerce application that provides a seamless shopping experience.
 
-## Getting Started
+![App Demo](assets/images/app-demo.gif)
 
-This project is a starting point for a Flutter application.
+## 🌟 Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🔐 User Authentication
+- 🏠 Beautiful Landing Page
+- ⏱️ Timeline View
+- 📱 Responsive Design
+- 🎨 Material Design 3.0
+- 🔄 State Management with Riverpod
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 📱 Screenshots
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div style="display: flex; justify-content: space-between;">
+    <img src="assets/images/landing-page.png" width="200" alt="Landing Page">
+    <img src="assets/images/timeline.png" width="200" alt="Timeline">
+    <img src="assets/images/signup.png" width="200" alt="Sign Up">
+</div>
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Flutter SDK (^3.5.3)
+- Dart SDK (^3.5.3)
+- An IDE (VS Code, Android Studio, etc.)
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/shopify360.git
