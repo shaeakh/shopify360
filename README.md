@@ -6,11 +6,6 @@ A modern Flutter-based e-commerce application that provides a seamless shopping 
 
 ## 🌟 Features
 
-![Screenshot_20241218_000821](https://github.com/user-attachments/assets/a995923d-7fc9-42e5-bfce-d2cdf04281b2)
-![Screenshot_20241218_000840](https://github.com/user-attachments/assets/5ac40025-7189-4093-9621-5bb2844a3140)
-![Screenshot_20241218_000859](https://github.com/user-attachments/assets/feaf6094-7bc8-43fb-8255-8e9f5d79ad6d)
-![Screenshot_20241218_000920](https://github.com/user-attachments/assets/a549a5d6-aae6-4fd6-bd19-af35a775af99)
-![Screenshot_20241218_000925](https://github.com/user-attachments/assets/89fce830-0a85-47e1-a7bf-b7e79ee80dcd)
 
 - 🔐 User Authentication
 - 🏠 Beautiful Landing Page
