@@ -17,11 +17,11 @@ class Product {
 
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      id: json['id'] ?? '',
+      id: json['id'] ?? "1",
       productName: json['product_name'] ?? '',
       price: double.parse(json['price'].toString()),
       favourite: json['favourite'] ?? false,
-      pictureUrl: json['image'] ??
+      pictureUrl: json['picture_url'] ??
           'https://dummyimage.com/200x200/cccccc/ffffff.png&text=No+Image',
     );
   }
@@ -30,8 +30,8 @@ class Product {
 class ProductCard1 extends StatelessWidget {
   final Product product;
 
-  ProductCard1({Key? key, required this.product}) : super(key: key);  
-  
+  ProductCard1({Key? key, required this.product}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -54,6 +54,7 @@ class ProductCard1 extends StatelessWidget {
                 // Product details
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(

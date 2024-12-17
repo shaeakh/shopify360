@@ -18,7 +18,12 @@ class _LandingPage extends State<LandingPage> {
     Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset("assets/landingpage/page_1.jpg"),
+        Flexible(
+          child: Image.asset(
+            "assets/landingpage/page_1.jpg",
+            fit: BoxFit.contain,
+          ),
+        ),
         SizedBox(height: 20),
         Text(
           "View product 360 degrees",
@@ -26,21 +31,29 @@ class _LandingPage extends State<LandingPage> {
               color: Colors.brown, fontSize: 22, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 10),
-        Text(
-          "You can see product with all angles, true, and convenient",
-          style: TextStyle(
-            color: Colors.grey,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Text(
+            "You can see product with all angles, true, and convenient",
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
         ),
       ],
     ),
     Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset("assets/landingpage/page_2.jpg"),
+        Flexible(
+          child: Image.asset(
+            "assets/landingpage/page_2.jpg",
+            fit: BoxFit.contain,
+          ),
+        ),
         SizedBox(height: 20),
         Text(
           "Find products easily",
@@ -48,21 +61,29 @@ class _LandingPage extends State<LandingPage> {
               color: Colors.brown, fontSize: 22, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 10),
-        Text(
-          "You just need to take a photo or upload and we will find similar products for you",
-          style: TextStyle(
-            color: Colors.grey,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Text(
+            "You just need to take a photo or upload and we will find similar products for you",
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
         ),
       ],
     ),
     Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset("assets/landingpage/page_3.jpg"),
+        Flexible(
+          child: Image.asset(
+            "assets/landingpage/page_3.jpg",
+            fit: BoxFit.contain,
+          ),
+        ),
         SizedBox(height: 20),
         Text(
           "Payment is easy",
@@ -70,14 +91,17 @@ class _LandingPage extends State<LandingPage> {
               color: Colors.brown, fontSize: 22, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 10),
-        Text(
-          "You just need to take a photo or upload and we will find similar products for you",
-          style: TextStyle(
-            color: Colors.grey,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Text(
+            "You just need to take a photo or upload and we will find similar products for you",
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
         ),
       ],
     )
@@ -129,56 +153,69 @@ class _LandingPage extends State<LandingPage> {
     );
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-        child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 60.0, horizontal: 16),
-    child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-    Expanded(
-    child: PageView(
-    controller: _pageController,
-    onPageChanged: (int index) {
-    setState(() {
-    _currentPage = index;});
-    },
-      children: _pages,
-    ),
-    ),
-      SizedBox(height: 20),
-      _buildPageIndicator(),
-      SizedBox(height: 20),
-      ElevatedButton(
-        onPressed: handle_started,
-        child: SizedBox(
-          width: 250,
-          child: Text(
-            "Get Started!",
-            style: TextStyle(
-                color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ),
-
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.brown,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5)),
-          padding:
-          EdgeInsets.symmetric(vertical: 14.0, horizontal: 24.0),
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: constraints.maxHeight,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: constraints.maxHeight * 0.6,
+                        child: PageView(
+                          controller: _pageController,
+                          onPageChanged: (int index) {
+                            setState(() {
+                              _currentPage = index;
+                            });
+                          },
+                          children: _pages,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      _buildPageIndicator(),
+                      SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: handle_started,
+                        child: SizedBox(
+                          width: 250,
+                          child: Text(
+                            "Get Started!",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.brown,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5)),
+                          padding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 24.0),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
         ),
       ),
-      SizedBox(height: 40),
-    ],
-    ),
-        )),
     );
   }
 }

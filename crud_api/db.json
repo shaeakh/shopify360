@@ -1,75 +1,69 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "product_name": "Handbag LV",
       "price": 225,
       "favourite": true,
       "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/bag.png"
     },
     {
-      "id": 2,
+      "id": "2",
       "product_name": "Shoes",
       "price": 201,
       "favourite": false,
       "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/shoe.png"
     },
     {
-      "id": 3,
+      "id": "3",
       "product_name": "T-shirt",
       "price": 400,
       "favourite": false,
       "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/t-shirt.png"
     },
     {
-      "id": 4,
+      "id": "4",
       "product_name": "Shorts",
       "price": 100,
       "favourite": true,
       "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/shorts.png"
-    },
-    {
-      "id": 5,
-      "product_name": "Jeans",
-      "price": 200,
-      "favourite": false,
-      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/jeans.png"
-    },
-    {
-      "id": 6,
-      "product_name": "Sneakers",
-      "price": 300,
-      "favourite": true,
-      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/sneakers.png"
-    },
-    {
-      "id": 7,
-      "product_name": "Pants",
-      "price": 500,
-      "favourite": false,
-      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/pants.png"
     }
   ],
-  "suggestions":[
+  "search_section": [
     {
-      "type" : "Shoe",
-      "product_name" : "Shoes 1"
+      "gender": "WOMEN",
+      "type": "NEW IN",
+      "picture_url": "https://github.com/shaeakh/code-share/blob/main/shopify360/1_ladies_bag.png"
     },
     {
-      "type" : "Shoe",
-      "product_name" : "Shoes 2"
+      "gender": "WOMEN",
+      "type": "SHOES",
+      "picture_url": "https://github.com/shaeakh/code-share/blob/main/shopify360/1_high_hill.png"
     },
     {
-      "type" : "Jeans",
-      "product_name" : "Jeans 1"
+      "gender": "WOMEN",
+      "type": "ACCEEORIES",
+      "picture_url": "https://github.com/shaeakh/code-share/blob/main/shopify360/1_ladies_hat.png"
     },
     {
-      "type" : "Jeans",
-      "product_name" : "Jeans 2"
+      "gender": "MEN",
+      "type": "NEW IN",
+      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/1_lather_bag.png"
     },
     {
-      "type" : "Bag",
-      "product_name" : "Bag 1"
+      "gender": "MEN",
+      "type": "CLOTHING",
+      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/t-shirt.png"
+    },
+    {
+      "gender": "MEN",
+      "type": "SHOES",
+      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/1_sneakers.png"
+    },
+    {
+      "gender": "MEN",
+      "type": "ACCEEORIES",
+      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/1_glass.png"
     }
   ]
 }

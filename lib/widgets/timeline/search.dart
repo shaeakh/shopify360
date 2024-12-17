@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Search_ extends StatefulWidget {
   const Search_({super.key});
@@ -8,6 +7,7 @@ class Search_ extends StatefulWidget {
 }
 
 class _Search_ extends State<Search_> {
+  bool show_resent_search = true;
   int state_ = 1;
   int selectedTab = 0;
   final search = TextEditingController();
@@ -18,6 +18,17 @@ class _Search_ extends State<Search_> {
     "Bags",
     "Accessories"
   ];
+  void _onTabSelected(int index) {
+    setState(() {
+      selectedTab = index;
+      _pageController.animateToPage(
+        index,
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    });
+  }
+  final PageController _pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -58,8 +69,8 @@ class _Search_ extends State<Search_> {
                     ),
                   ),
                   onChanged: (value) {
-                    setState(() {                      
-                      state_ = value.isEmpty ? ((state_==2)? 3 :1) : 2;
+                    setState(() {
+                      state_ = value.isEmpty ? ((state_ == 2) ? 3 : 1) : 2;
                     });
                   },
                 ),
@@ -71,11 +82,7 @@ class _Search_ extends State<Search_> {
                       children: [
                         Expanded(
                           child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                selectedTab = 0;
-                              });
-                            },
+                            onTap: () => _onTabSelected(0),
                             child: Container(
                               padding: const EdgeInsets.symmetric(vertical: 8),
                               decoration: BoxDecoration(
@@ -103,11 +110,7 @@ class _Search_ extends State<Search_> {
                         ),
                         Expanded(
                           child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                selectedTab = 1;
-                              });
-                            },
+                            onTap: () => _onTabSelected(1),
                             child: Container(
                               padding: const EdgeInsets.symmetric(vertical: 8),
                               decoration: BoxDecoration(
@@ -136,8 +139,49 @@ class _Search_ extends State<Search_> {
                       ],
                     ),
                   ),
-                ]
-                else if (state_ == 2) ...[
+                  SizedBox(height: 10),
+                  SizedBox(
+                    height: 300,
+                    child: PageView(
+                      controller: _pageController,
+                      onPageChanged: (index) {
+                        setState(() {
+                          selectedTab = index;
+                        });
+                      },
+                      children: [
+                        Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.female, size: 100, color: Colors.pink),
+                              Text(
+                                "Welcome to Women's Section",
+                                style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.male, size: 100, color: Colors.blue),
+                              Text(
+                                "Welcome to Men's Section",
+                                style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ] else if (state_ == 2) ...[
                   ListView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
@@ -155,23 +199,69 @@ class _Search_ extends State<Search_> {
                       );
                     },
                   ),
-                ]
-                else if (state_==3) ...[
-                  Image.asset(
-                    "assets/timelinepage/nosearch.jpg",
-                    errorBuilder: (context, error, stackTrace) {
-                      return Container(
-                        height: 200,
-                        child: Center(
-                          child: Icon(
-                            Icons.image_not_supported,
-                            size: 50,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      );
-                    },
-                  )
+                ] else if (state_ == 3) ...[
+                  show_resent_search
+                      ? Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Contact prefested in",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14),
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      show_resent_search = false;
+                                    });
+                                  },
+                                  child: Icon(
+                                    Icons.close,
+                                    color: Colors.pink,
+                                  ),
+                                )
+                              ],
+                            ),
+                            ListView.builder(
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              itemCount: suggestions.length,
+                              itemBuilder: (context, index) {
+                                return ListTile(
+                                  leading:
+                                      Icon(Icons.search, color: Colors.grey),
+                                  title: Text(suggestions[index]),
+                                  onTap: () {
+                                    setState(() {
+                                      search.text = suggestions[index];
+                                      state_ = 2;
+                                    });
+                                  },
+                                );
+                              },
+                            ),
+                          ],
+                        )
+                      : Image.asset(
+                          "assets/timelinepage/nosearch.jpg",
+                          width: double.infinity,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Container(
+                              height: double.infinity,
+                              child: Center(
+                                child: Icon(
+                                  Icons.image_not_supported,
+                                  size: 50,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            );
+                          },
+                        )
                 ]
               ],
             ),

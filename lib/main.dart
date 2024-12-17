@@ -6,7 +6,7 @@ import 'package:shopify360/pages/timelinePage.dart';
 import 'pages/landingPage.dart';
 
 Future<void> main() async {
-  await dotenv.load();
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const timelinepage(),
+      home: const LandingPage(),
     );
   }
 }

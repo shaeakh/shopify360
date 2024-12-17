@@ -66,11 +66,16 @@ class _Signuppage extends State<Signuppage>{
             fontWeight: FontWeight.bold
           ),
         ),
-        leading: Icon(
-            Icons.chevron_left,
+        leading: IconButton(
+            onPressed: (){
+              Navigator.pop(context);
+            },
+          icon: Icon(
+          Icons.chevron_left,
           color: Colors.grey,
           size: 40,
         ),
+        )
       ),
       body: Padding(
         child: SingleChildScrollView(
