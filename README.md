@@ -33,4 +33,4 @@ A modern Flutter-based e-commerce application that provides a seamless shopping 
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/shopify360.git
+git clone https://github.com/shaeakh/shopify360.git
