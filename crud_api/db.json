@@ -5,65 +5,65 @@
       "product_name": "Handbag LV",
       "price": 225,
       "favourite": true,
-      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/bag.png"
+      "picture_url": "assets/timelinepage/products/bag.png"
     },
     {
       "id": "2",
       "product_name": "Shoes",
       "price": 201,
       "favourite": false,
-      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/shoe.png"
+      "picture_url": "assets/timelinepage/products/shoe.png"
     },
     {
       "id": "3",
       "product_name": "T-shirt",
       "price": 400,
       "favourite": false,
-      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/t-shirt.png"
+      "picture_url": "assets/timelinepage/products/t-shirt.png"
     },
     {
       "id": "4",
       "product_name": "Shorts",
       "price": 100,
       "favourite": true,
-      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/shorts.png"
+      "picture_url": "assets/timelinepage/products/shorts.png"
     }
   ],
   "search_section": [
     {
       "gender": "WOMEN",
       "type": "NEW IN",
-      "picture_url": "https://github.com/shaeakh/code-share/blob/main/shopify360/1_ladies_bag.png"
+      "picture_url": "assets/timelinepage/products/1_ladies_bag.png"
     },
     {
       "gender": "WOMEN",
       "type": "SHOES",
-      "picture_url": "https://github.com/shaeakh/code-share/blob/main/shopify360/1_high_hill.png"
+      "picture_url": "assets/timelinepage/products/1_high_hill.png"
     },
     {
       "gender": "WOMEN",
       "type": "ACCEEORIES",
-      "picture_url": "https://github.com/shaeakh/code-share/blob/main/shopify360/1_ladies_hat.png"
+      "picture_url": "assets/timelinepage/products/1_ladies_hat.png"
     },
     {
       "gender": "MEN",
       "type": "NEW IN",
-      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/1_lather_bag.png"
+      "picture_url": "assets/timelinepage/products/1_lather_bag.png"
     },
     {
       "gender": "MEN",
       "type": "CLOTHING",
-      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/t-shirt.png"
+      "picture_url": "assets/timelinepage/products/t-shirt.png"
     },
     {
       "gender": "MEN",
       "type": "SHOES",
-      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/1_sneakers.png"
+      "picture_url": "assets/timelinepage/products/1_sneakers.png"
     },
     {
       "gender": "MEN",
       "type": "ACCEEORIES",
-      "picture_url": "https://raw.githubusercontent.com/shaeakh/code-share/refs/heads/main/shopify360/1_glass.png"
+      "picture_url": "assets/timelinepage/products/1_glass.png"
     }
   ]
 }

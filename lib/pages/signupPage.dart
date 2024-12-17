@@ -21,6 +21,7 @@ class _Signuppage extends State<Signuppage>{
   final TextEditingController  first_name = TextEditingController();
   final TextEditingController  last_name = TextEditingController();
   final TextEditingController  password = TextEditingController();
+  var show_prefested_email_option = true;
 
   bool show_pass = false;
   bool can_signUP = false;
@@ -41,7 +42,7 @@ class _Signuppage extends State<Signuppage>{
     Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) =>timelinepage(),
+          builder: (context) => TimelinePage(),
         )
     );
   }
@@ -59,6 +60,7 @@ class _Signuppage extends State<Signuppage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
             "Sign up",
@@ -435,151 +437,152 @@ class _Signuppage extends State<Signuppage>{
                   ),
                 ),
                 SizedBox(height: 20,),
-
-
                 Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey.withOpacity(0.2),
-                            blurRadius: 5,
-                            spreadRadius: 1,
-                            offset: Offset(0, 2)
+                  child: show_prefested_email_option ? Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey.withOpacity(0.2),
+                              blurRadius: 5,
+                              spreadRadius: 1,
+                              offset: Offset(0, 2)
+                          ),
+                        ]
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 20,horizontal: 16),
+                    child:  Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Contact prefested in",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14
+                                  ),
+                                ),
+                                SizedBox(height: 8),
+                                Text(
+                                  "Tell us which email you'd like:",
+                                  style: TextStyle(
+                                      color: Colors.grey
+                                  ),
+                                ),
+                              ],
+
+                            ),
+                            InkWell(
+                              onTap: (){
+                                setState(() {
+                                  show_prefested_email_option = false;
+                                });
+                              },
+                              child: Icon(
+                                Icons.close,
+                                color: Colors.pink,
+                              ),
+                            )
+                          ],
                         ),
-                      ]
-                  ),
-                  padding: EdgeInsets.symmetric(vertical: 20,horizontal: 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
+
+                        SizedBox(height: 13),
 
 
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Contact prefested in",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14
-                                ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Discounts and sales",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16
                               ),
-                              SizedBox(height: 8),
-                              Text(
-                                "Tell us which email you'd like:",
-                                style: TextStyle(
-                                    color: Colors.grey
-                                ),
+                            ),
+                            Checkbox(activeColor:Colors.brown ,value: discountsSelected, onChanged: (val){
+                              setState(() {
+                                discountsSelected = val ?? false;
+                              });
+                            })
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "New stuff",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16
                               ),
-                            ],
-
-                          ),
-                          InkWell(
-                            onTap: (){},
-                            child: Icon(
-                              Icons.close,
-                              color: Colors.pink,
                             ),
-                          )
-                        ],
-                      ),
-
-                      SizedBox(height: 13),
-
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Discounts and sales",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16
+                            Checkbox(activeColor:Colors.brown,value: newStaffSelected, onChanged: (val){
+                              setState(() {
+                                newStaffSelected = val ?? false;
+                              });
+                            })
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Your exclusives",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16
+                              ),
                             ),
-                          ),
-                          Checkbox(activeColor:Colors.brown ,value: discountsSelected, onChanged: (val){
-                            setState(() {
-                              discountsSelected = val ?? false;
-                            });
-                          })
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "New stuff",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16
+                            Checkbox(activeColor:Colors.brown,value: exclusivesSelected, onChanged: (val){
+                              setState(() {
+                                exclusivesSelected = val ?? false;
+                              });
+                            })
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "App partners",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16
+                              ),
                             ),
-                          ),
-                          Checkbox(activeColor:Colors.brown,value: newStaffSelected, onChanged: (val){
-                            setState(() {
-                              newStaffSelected = val ?? false;
-                            });
-                          })
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Your exclusives",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16
-                            ),
-                          ),
-                          Checkbox(activeColor:Colors.brown,value: exclusivesSelected, onChanged: (val){
-                            setState(() {
-                              exclusivesSelected = val ?? false;
-                            });
-                          })
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "App partners",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16
-                            ),
-                          ),
-                          Checkbox(activeColor:Colors.brown,value: partnersSelected, onChanged: (val){
-                            setState(() {
-                              partnersSelected = val ?? false;
-                            });
-                          })
-                        ],
-                      ),
-                      SizedBox(height: 16),
-                      Text(
-                        "Tell me more about these",
-                        style: TextStyle(color:Colors.grey),
-                      ),
-                      SizedBox(height: 16),
-                      Text(
-                        "By creating your account, you agree to our",
-                        style: TextStyle(color:Colors.grey),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        "Terms and Conditions & Privacy Policy",
-                        style: TextStyle(color:Colors.brown,fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
+                            Checkbox(activeColor:Colors.brown,value: partnersSelected, onChanged: (val){
+                              setState(() {
+                                partnersSelected = val ?? false;
+                              });
+                            })
+                          ],
+                        ),
+                        SizedBox(height: 16),
+                        Text(
+                          "Tell me more about these",
+                          style: TextStyle(color:Colors.grey),
+                        ),
+                        SizedBox(height: 16),
+                        Text(
+                          "By creating your account, you agree to our",
+                          style: TextStyle(color:Colors.grey),
+                        ),
+                        SizedBox(height: 4),
+                        Text(
+                          "Terms and Conditions & Privacy Policy",
+                          style: TextStyle(color:Colors.brown,fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ) ,
+                  ):null,
                 ),
                 SizedBox(height: 160,),
                 Padding(

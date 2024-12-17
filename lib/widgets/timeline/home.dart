@@ -68,10 +68,13 @@ class _Home extends State<Home> {
           "New Trend",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        leading: Icon(
+        leading: IconButton(onPressed:(){
+          Navigator.pop(context);
+        }, icon: Icon(
           Icons.chevron_left,
           color: Colors.grey,
           size: 40,
+        ),
         ),
         actions: [
           IconButton(

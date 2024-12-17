@@ -50,6 +50,7 @@ class ProductCard1 extends StatelessWidget {
                 const EdgeInsets.only(top: 60, left: 8, right: 8, bottom: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // Product details
                 Column(
